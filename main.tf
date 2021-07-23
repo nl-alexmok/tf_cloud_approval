@@ -65,6 +65,7 @@ resource "aws_instance" "demo_ec2" {
   key_name                    = "alex-key"
   associate_public_ip_address = true
   subnet_id                   = aws_subnet.public_a.id
+  security_groups             = [aws_security_group.allow_ssh.id]
 
   root_block_device {
       encrypted   = true
